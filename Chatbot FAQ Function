@@ -1,0 +1,77 @@
+using System;
+using System.Diagnostics;
+using System.Threading;
+
+class Program
+{
+    // Console Portion of this (Single Level Functionality)
+
+    public static void Main(string[] args)
+    {
+        Console.ForegroundColor = ConsoleColor.Red;
+        Console.BackgroundColor = ConsoleColor.Black;
+        Console.WriteLine("Welcome to the Workout Generator App! \n");
+
+        Console.WriteLine("Below are a list of our Frequently Asked Questions:");
+
+        int MenuInt = 0;
+
+        do
+        {
+            Console.ForegroundColor= ConsoleColor.Red;
+            Console.WriteLine
+               ("\n" +
+                "1) What are the benefits of being Active?\n" +
+                "2) Can I tailor my Workout to my preferences or fitness goals?\n" +
+                "3) Is there a variety of workout options available, or does the app offer a specific type of workout?\n" +
+                "4) Are there video demonstrations or detailed instructions for each exercise in the generated workout?\n" +
+                "5) Can I sync the app with my smart devices or wearables to monitor my physical activity throughout the day?\n" +
+                "6) Are there instructional videos or guides to ensure I'm performing exercises with proper form and technique?\n" +
+                "7) Stop");
+
+            
+            MenuInt = 0;
+            MenuInt = Convert.ToInt32 (Console.ReadLine());
+            
+
+            switch (MenuInt)
+            {
+                case 1:
+                    Console.ForegroundColor = ConsoleColor.White;
+                    Console.WriteLine("\n Benefits include improved thinking or cognition for children 6 to 13 years of age and reduced short-term feelings of anxiety for adults. Regular physical activity can help keep your thinking, learning, and judgment skills sharp as you age. It can also reduce your risk of depression and anxiety and help you sleep better");
+                    break;
+                case 2:
+                    Console.ForegroundColor = ConsoleColor.White;
+                    Console.WriteLine("\n You can tailor your workout to your preferences or your fitness goals.\n There is a wide variety of workout options available depending on what your goals are ranging from simply walking to weight lifting");
+                    break;
+                case 3:
+                    Console.ForegroundColor = ConsoleColor.White;
+                    Console.WriteLine("\n There is a wide variety of workout options available depending on your personal preferences and what you want to acheive. \n This can range from: \n Weightlifting \n Walking or Running \n Sports \n Yoga \n etc...");
+                    break;
+                case 4:
+                    Console.ForegroundColor = ConsoleColor.White;
+                    Console.WriteLine("\n Yes, there is either a video demonstration of the workout or a detailed description of the workout");
+                    break;
+                case 5:
+                    Console.ForegroundColor = ConsoleColor.White;
+                    Console.WriteLine("\n No, the functionality that is currently available does not allow the app to be synced with smart devices to track activity.");
+                    break;
+                case 6:
+                    Console.ForegroundColor = ConsoleColor.White;
+                    Console.WriteLine("\n Yes, there are in some cases videos or detailed instruction there to ensure the proper form and technique");
+                    break;
+                case 7:
+                    Console.ForegroundColor = ConsoleColor.White;
+                    Console.WriteLine("\n Thank you for using our Frequently Asked Questions feature.");
+                    break;
+            } 
+
+        } while (MenuInt != 7);
+
+
+
+
+
+
+
+    }
