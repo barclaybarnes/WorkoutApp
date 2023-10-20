@@ -1,3 +1,9 @@
+using System;
+using System.Diagnostics;
+using System.Runtime.InteropServices;
+using System.Threading;
+
+
 class Program
 {
     
@@ -64,10 +70,35 @@ class Program
                     break;
                 case 7:
                     {
-                        var prs = new ProcessStartInfo("chrome.exe");
-                        prs.Arguments = "google.com";
-                        Process.Start(prs);
-                    }
+                       
+                    string url = "http://google.com";
+    
+    
+        try
+        {
+            Process.Start(url);
+        }
+        catch
+        {
+            if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
+            {
+                url = url.Replace("&", "^&");
+                Process.Start(new ProcessStartInfo("cmd", $"/c start {url}") { CreateNoWindow = true });
+            }
+            else if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
+            {
+                Process.Start("xdg-open", url);
+            }
+            else if (RuntimeInformation.IsOSPlatform(OSPlatform.OSX))
+            {
+                Process.Start("open", url);
+            }
+            else
+            {
+                throw;
+            }
+        }
+}
                     break;
                 case 8:
                     Console.ForegroundColor = ConsoleColor.Red;
