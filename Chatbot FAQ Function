@@ -69,36 +69,36 @@ class Program
                     Console.WriteLine("\n Yes, there are in some cases videos or detailed instruction there to ensure the proper form and technique");
                     break;
                 case 7:
-                    {
+                  {
                        
                     string url = "http://google.com";
     
     
-        try
-        {
-            Process.Start(url);
-        }
-        catch
-        {
-            if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
-            {
-                url = url.Replace("&", "^&");
-                Process.Start(new ProcessStartInfo("cmd", $"/c start {url}") { CreateNoWindow = true });
-            }
-            else if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
-            {
-                Process.Start("xdg-open", url);
-            }
-            else if (RuntimeInformation.IsOSPlatform(OSPlatform.OSX))
-            {
-                Process.Start("open", url);
-            }
-            else
-            {
-                throw;
-            }
-        }
-}
+                    try
+                    {
+                        Process.Start(url);
+                    }
+                    catch
+                    {
+                        if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
+                        {
+                            url = url.Replace("&", "^&");
+                            Process.Start(new ProcessStartInfo("cmd", $"/c start {url}") { CreateNoWindow = true });
+                        }
+                        else if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
+                        {
+                            Process.Start("xdg-open", url);
+                        }
+                        else if (RuntimeInformation.IsOSPlatform(OSPlatform.OSX))
+                        {
+                            Process.Start("open", url);
+                        }
+                        else
+                        {
+                            throw;
+                        }
+                    }
+                }
                     break;
                 case 8:
                     Console.ForegroundColor = ConsoleColor.Red;
